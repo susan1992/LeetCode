@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int getSum(int a, int b) {
+        int sum = a;
+        int carry = b;
+        
+        while(carry){//bit manipulation
+            int temp = sum;
+            sum = temp^carry;
+            carry = (temp&carry)<<1;
+        }
+        return sum;
+    }
+};

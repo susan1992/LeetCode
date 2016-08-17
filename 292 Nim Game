@@ -1,0 +1,7 @@
+class Solution {
+public:
+    bool canWinNim(int n) {
+        if(0==n%4) return false;
+        else return true;
+    }
+};
