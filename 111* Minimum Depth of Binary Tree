@@ -1,0 +1,27 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {//different from the maximum one, need to consider the empty branch condition
+public:
+    int minDepth(TreeNode* root) {
+        
+        if (root==NULL) return 0;
+        
+        int lmin = minDepth(root->left);
+        int rmin = minDepth(root->right);
+        
+        if (root->left==0&&root->right==0) return 1;
+        
+        if (root->left==0) lmin=INT_MAX;
+        if (root->right==0) rmin=INT_MAX;
+        
+        return min(lmin,rmin)+1;
+        
+    }
+};
