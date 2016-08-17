@@ -1,0 +1,7 @@
+class Solution {
+public:
+    int addDigits(int num) {//https://en.wikipedia.org/wiki/Digital_root
+        if(num>0) return (num-1)%9+1;
+        else return 0;
+    }
+};
