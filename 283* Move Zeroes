@@ -1,0 +1,11 @@
+class Solution {
+public:
+    void moveZeroes(vector<int>& nums) {//two pointers, the non_zero keeps growing and the zero++ when there is a swap
+        for (int zero = 0, non_zero = 0; non_zero<nums.size();++non_zero) {
+            
+            if (nums[non_zero]!=0){
+                swap(nums[non_zero],nums[zero++]);
+            }
+        }
+    }
+};
